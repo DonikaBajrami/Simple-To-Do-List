@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>To do list</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <link rel="stylesheet"  type="text/css" href="/style.css"/>  
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+    <div class="col-sm-12 col-xs-12">
+      <div class="title">
+    <h1 class="text-center display-3">To Do List</h1>
+    <h2 class="text-center">Let's start your day right!</h2>
+  </div>
+
+     <form action="/todo/add/" method="POST" class="col-5 mx-auto">
+      <div class="input-group">
+
+        <input type="text" name="newtodo" class="center form-control input_field"  id="newtodo" autofocus />
+        <input type="submit" class="addBtn btn btn-dark"/>
+
+      </div>
+    </form>
+  </div>
+  
+<div class="col-sm-8 offset-sm-2 col-xs-12">
+  <ul  class="list mx-auto ">
+    <% todolist.forEach(function(todo, index) { %>
+    <li><a href="/todo/remove/<%= index %>" class="addBtn btn btn-dark">Remove</a> <%= todo %></li>
+    <% }); %>
+  </ul>
+  </div>
+</div>
+</div>
+</body>
+</html>
